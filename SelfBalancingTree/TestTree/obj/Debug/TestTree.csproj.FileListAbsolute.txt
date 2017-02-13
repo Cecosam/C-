@@ -1,0 +1,9 @@
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\bin\Debug\TestTree.dll
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\bin\Debug\TestTree.pdb
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\obj\Debug\TestTree.csprojResolveAssemblyReference.cache
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\obj\Debug\TestTree.dll
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\obj\Debug\TestTree.pdb
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\bin\Debug\nunit.framework.dll
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\bin\Debug\SelfBalancingTree.exe
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\bin\Debug\SelfBalancingTree.pdb
+D:\DEV\VCSharpPrj\SelfBalancingTree\TestTree\bin\Debug\nunit.framework.xml

@@ -1,0 +1,6 @@
+D:\DEV\VCSharpPrj\SelfBalancingTree\SelfBalancingTree\bin\Debug\SelfBalancingTree.exe.config
+D:\DEV\VCSharpPrj\SelfBalancingTree\SelfBalancingTree\bin\Debug\SelfBalancingTree.exe
+D:\DEV\VCSharpPrj\SelfBalancingTree\SelfBalancingTree\bin\Debug\SelfBalancingTree.pdb
+D:\DEV\VCSharpPrj\SelfBalancingTree\SelfBalancingTree\obj\Debug\SelfBalancingTree.csprojResolveAssemblyReference.cache
+D:\DEV\VCSharpPrj\SelfBalancingTree\SelfBalancingTree\obj\Debug\SelfBalancingTree.exe
+D:\DEV\VCSharpPrj\SelfBalancingTree\SelfBalancingTree\obj\Debug\SelfBalancingTree.pdb
