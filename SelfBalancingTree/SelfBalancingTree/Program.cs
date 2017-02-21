@@ -11,8 +11,8 @@ namespace SelfBalancingTree
             //var list = new List<int>() { 2, 1, 0, 3, 4, 10 };
             //var myArrowTree = new Tree<int>();
             //var myArrowTree = new Tree<int>();
-            var myArrowTree = new Tree<int>(false);
-            var count = 200;
+            var myArrowTree = new Tree<int>();
+            var count = 2000;
 
             var newArray = new int[10];
             
@@ -24,11 +24,13 @@ namespace SelfBalancingTree
 
             for (int i = 0; i < count; i++)
             {
-                var current = rnd.Next(-100000, 1000000);
-                //myArrowTree.Add(i);
-                myArrowTree.Add(current);
-            }            
+                //var current = rnd.Next(-100000, 1000000);
+                myArrowTree.Add(i);
+                //myArrowTree.Add(current);
+            }
 
+            //myArrowTree.EnableSelfBalancing();
+            Console.WriteLine(myArrowTree.IsPerfectlyBalancedAVLTree());           
             //Console.WriteLine(myArrowTree.IsProperSubsetOf(list));
 
             //Console.WriteLine(string.Join(" ", myArrowTree));
@@ -36,12 +38,12 @@ namespace SelfBalancingTree
             //Console.WriteLine(myArrowTree.Contains(333));
             //Console.WriteLine(myArrowTree.Count);
 
-            //for (int i = 0; i < count; i++)
-            //{
-            //    var current = rnd.Next(-100, 100);
-            //    //myArrowTree.Remove(i);
-            //    myArrowTree.Remove(current);
-            //}
+            for (int i = 0; i < count; i++)
+            {
+                //var current = rnd.Next(-100, 100);
+                //myArrowTree.Remove(i);
+                //myArrowTree.Remove(current);
+            }
 
             //foreach (var item in myArrowTree)
             //{
@@ -63,12 +65,12 @@ namespace SelfBalancingTree
             //myArrowTree.CopyTo(newArray, 2);
             //myArrowTree.CopyTo(newArray);
             //Console.WriteLine(string.Join(" ", newArray));
-            Console.WriteLine(myArrowTree.ToString());
+            //Console.WriteLine(myArrowTree.ToString());
             Console.WriteLine(string.Join(" ", myArrowTree.GetTopLevels()));
-            //Console.WriteLine(myArrowTree.Count);
+            Console.WriteLine(myArrowTree.Count);
             //Console.WriteLine(myArrowTree.ToHashSet().Count);
             //Console.WriteLine(string.Join(" ", myArrowTree.ToList()));
-            //Console.WriteLine(myArrowTree.ToList().Count);
+            Console.WriteLine(myArrowTree.ToList().Count);
             //myArrowTree.PrintElements();
 
             //var reversedList = myArrowTree.Reverse();

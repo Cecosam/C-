@@ -393,6 +393,47 @@ namespace SelfBalancingTree
 
             return result;
         }
+        public string IsPerfectlyBalancedAVLTree()
+        {
+            if (this.Root == null)
+            {
+                return null;
+            }
+
+            double notAVLSubtree = 0d;
+            var allSubrtrees = 1;
+            var queue = new Queue<Node<T>>();
+            queue.Enqueue(this.Root);
+
+            while (queue.Count != 0)
+            {
+                var currentNode = queue.Dequeue();
+                
+
+                if (IsBalanced(currentNode) != 0)
+                {
+                    notAVLSubtree++;
+                }
+
+                if (currentNode.LeftNode == null && currentNode.RightNode == null)
+                {
+                    continue;
+                }
+
+                if (currentNode.LeftNode != null)
+                {
+                    allSubrtrees++;
+                    queue.Enqueue(currentNode.LeftNode);
+                }
+                if (currentNode.RightNode != null)
+                {
+                    allSubrtrees++;
+                    queue.Enqueue(currentNode.RightNode);
+                }
+            }
+
+            return string.Format("Balanced at {0:F2}%", ((allSubrtrees - notAVLSubtree) / allSubrtrees) * 100);
+        }
         public void EnableSelfBalancing()
         {
             this.IsSelfBalancing = true;
