@@ -12,11 +12,10 @@ namespace SelfBalancingTree
             //var myArrowTree = new Tree<int>();
             //var myArrowTree = new Tree<int>();
             var myArrowTree = new Tree<int>();
-            var count = 2000;
+            var count = 1000;
 
             var newArray = new int[10];
             
-
             var dic = new SortedSet<int>() { 33, 2, 3, 1 };
             //Console.WriteLine(string.Join(" ", dic));
            
@@ -24,9 +23,9 @@ namespace SelfBalancingTree
 
             for (int i = 0; i < count; i++)
             {
-                //var current = rnd.Next(-100000, 1000000);
-                myArrowTree.Add(i);
-                //myArrowTree.Add(current);
+                var current = rnd.Next(-100000, 1000000);
+                //myArrowTree.Add(i);
+                myArrowTree.Add(current);
             }
 
             //myArrowTree.EnableSelfBalancing();

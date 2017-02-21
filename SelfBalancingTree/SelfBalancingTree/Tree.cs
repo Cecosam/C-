@@ -13,7 +13,7 @@ namespace SelfBalancingTree
     public class Tree<T> : ISet<T>, ICollection<T>, IEnumerable<T> where T : IComparable<T>
     {
         [Serializable]
-        public class Node<T>
+        public class Node<T> : IEnumerable<T>
         {
             public Node(T item, Node<T> parent)
             {
@@ -31,6 +31,31 @@ namespace SelfBalancingTree
             public Node<T> RightNode { get; set; }
             public Node<T> Parent { get; set; }
             public T Value { get; set; }
+
+            public IEnumerator<T> GetEnumerator()
+            {
+                if (this.LeftNode != null)
+                {
+                    foreach (T item in this.LeftNode)
+                    {
+                        yield return item;
+                    }
+                }
+
+                yield return this.Value;
+
+                if (this.RightNode != null)
+                {
+                    foreach (T item in this.RightNode)
+                    {
+                        yield return item;
+                    }
+                }
+            }
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return this.GetEnumerator();
+            }
         }
 
         private T minValue;
@@ -43,7 +68,7 @@ namespace SelfBalancingTree
             {
                 throw new ArgumentNullException();
             }
-             
+
             foreach (var item in collection)
             {
                 this.Add(item);
@@ -94,7 +119,7 @@ namespace SelfBalancingTree
             }
         }
         private bool IsSelfBalancing { get; set; }
-        private Node<T> Root { get; set; }      
+        private Node<T> Root { get; set; }
         public bool IsReadOnly
         {
             get
@@ -124,8 +149,8 @@ namespace SelfBalancingTree
                     {
                         currentNode.LeftNode = new Node<T>(item, currentNode);
                         if (item.CompareTo(MinValue) < 0)
-                        {                            
-                            this.MinValue = item; 
+                        {
+                            this.MinValue = item;
                         }
                         this.Count++;
                         if (this.IsSelfBalancing)
@@ -252,7 +277,7 @@ namespace SelfBalancingTree
                     return true;
                 }
             }
-        }        
+        }
         public bool Contains(T item)
         {
             var currentNode = this.Root;
@@ -329,7 +354,7 @@ namespace SelfBalancingTree
             {
                 array[i] = list[i - arrayIndex];
             }
-        }      
+        }
         public void PrintElements()
         {
             if (this.Root == null)
@@ -346,17 +371,18 @@ namespace SelfBalancingTree
             GetReversedListOfElements(this.Root, list);
 
             return list as IEnumerable<T>;
-        }      
+        }
         public IEnumerator<T> GetEnumerator()
         {
-            var list = new List<T>();
+            return this.Root.GetEnumerator();
+            //var list = new List<T>();
 
-            GetAllElements(this.Root, list);
+            //GetAllElements(this.Root, list);
 
-            for (int i = 0; i < list.Count; i++)
-            {
-                yield return list[i];
-            }
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    yield return list[i];
+            //}
         }
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -373,7 +399,7 @@ namespace SelfBalancingTree
             {
                 result.Append(list[i].ToString() + ", ");
             }
-            result.Append(list[list.Count-1].ToString() + "!");
+            result.Append(list[list.Count - 1].ToString() + "!");
 
             return result.ToString();
         }
@@ -408,7 +434,7 @@ namespace SelfBalancingTree
             while (queue.Count != 0)
             {
                 var currentNode = queue.Dequeue();
-                
+
 
                 if (IsBalanced(currentNode) != 0)
                 {
@@ -1050,7 +1076,7 @@ namespace SelfBalancingTree
             while (queue.Count != 0)
             {
                 var currentNode = queue.Dequeue();
-                
+
                 currentNode = Rotation(currentNode);
 
                 if (currentNode.LeftNode != null)
@@ -1067,7 +1093,7 @@ namespace SelfBalancingTree
             {
                 BalanceTree();
             }
-        }       
+        }
         private int IsBalanced(Node<T> subTreeRoot)
         {
             var leftSideLevel = 0;
