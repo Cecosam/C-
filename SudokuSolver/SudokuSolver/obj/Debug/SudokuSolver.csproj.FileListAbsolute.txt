@@ -1,0 +1,6 @@
+c:\users\ceco\documents\visual studio 2015\Projects\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.exe.config
+c:\users\ceco\documents\visual studio 2015\Projects\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.exe
+c:\users\ceco\documents\visual studio 2015\Projects\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.pdb
+c:\users\ceco\documents\visual studio 2015\Projects\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.csprojResolveAssemblyReference.cache
+c:\users\ceco\documents\visual studio 2015\Projects\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.exe
+c:\users\ceco\documents\visual studio 2015\Projects\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.pdb
