@@ -155,6 +155,10 @@ namespace SelfBalancingTree
                         this.Count++;
                         if (this.IsSelfBalancing)
                         {
+                            if (FastBalance(currentNode.Parent))
+                            {
+                                return true;
+                            }
                             BalanceTree();
                         }
                         return true;
@@ -176,6 +180,10 @@ namespace SelfBalancingTree
                         this.Count++;
                         if (this.IsSelfBalancing)
                         {
+                            if (FastBalance(currentNode.Parent))
+                            {
+                                return true;
+                            }
                             BalanceTree();
                         }
                         return true;
@@ -1093,6 +1101,20 @@ namespace SelfBalancingTree
             {
                 BalanceTree();
             }
+        }
+        private bool FastBalance(Node<T> parent)
+        {
+            if (parent == null)
+            {
+                return false;
+            }
+
+            if (IsBalanced(parent) == 0)
+            {
+                return false;
+            }
+            Rotation(parent);
+            return true;
         }
         private int IsBalanced(Node<T> subTreeRoot)
         {

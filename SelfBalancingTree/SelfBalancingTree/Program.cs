@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 
 namespace SelfBalancingTree
 {
@@ -12,7 +12,7 @@ namespace SelfBalancingTree
             //var myArrowTree = new Tree<int>();
             //var myArrowTree = new Tree<int>();
             var myArrowTree = new Tree<int>();
-            var count = 1000;
+            var count = 2000;
 
             var newArray = new int[10];
             
@@ -20,30 +20,32 @@ namespace SelfBalancingTree
             //Console.WriteLine(string.Join(" ", dic));
            
             var rnd = new Random();
-
+            var sw = new Stopwatch();
+            sw.Start();
             for (int i = 0; i < count; i++)
             {
-                var current = rnd.Next(-100000, 1000000);
+                var current = rnd.Next(-1000, 1000);
                 //myArrowTree.Add(i);
                 myArrowTree.Add(current);
             }
-
+            Console.WriteLine(sw.Elapsed);
             //myArrowTree.EnableSelfBalancing();
-            Console.WriteLine(myArrowTree.IsPerfectlyBalancedAVLTree());           
+            Console.WriteLine(myArrowTree.IsPerfectlyBalancedAVLTree());
             //Console.WriteLine(myArrowTree.IsProperSubsetOf(list));
 
             //Console.WriteLine(string.Join(" ", myArrowTree));
 
             //Console.WriteLine(myArrowTree.Contains(333));
             //Console.WriteLine(myArrowTree.Count);
-
+            sw.Reset();
+            sw.Start();
             for (int i = 0; i < count; i++)
             {
-                //var current = rnd.Next(-100, 100);
+                var current = rnd.Next(-1000, 1000);
                 //myArrowTree.Remove(i);
-                //myArrowTree.Remove(current);
+                myArrowTree.Remove(current);
             }
-
+            Console.WriteLine(sw.Elapsed);
             //foreach (var item in myArrowTree)
             //{
             //    Console.Write("{0} ", item);
