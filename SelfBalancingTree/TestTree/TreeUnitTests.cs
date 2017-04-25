@@ -603,8 +603,8 @@ namespace TestTree
         [TestCase(1, new int[] { 0 })]
         [TestCase(4, new int[] { 1, 2 })]
         [TestCase(6, new int[] { 2, 2, 2 })]
-        [TestCase(8, new int[] { 2, 2, 2, 3 })]
-        [TestCase(10, new int[] { 3, 2, 3, 3 })]
+        [TestCase(8, new int[] { 2, 2, 3, 3 })]
+        [TestCase(10, new int[] { 2, 2, 3, 3, 3 })]
         public void GetTopLevels_ShouldReturnCollectionOfTheLevelsOfAllTopLevelElements(int value, int[] expected)
         {
             var tree = new Tree<int>();

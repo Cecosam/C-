@@ -382,15 +382,13 @@ namespace SelfBalancingTree
         }
         public IEnumerator<T> GetEnumerator()
         {
-            return this.Root.GetEnumerator();
-            //var list = new List<T>();
-
-            //GetAllElements(this.Root, list);
-
-            //for (int i = 0; i < list.Count; i++)
-            //{
-            //    yield return list[i];
-            //}
+            if (this.Root != null)
+            {
+                foreach (var item in this.Root)
+                {
+                    yield return item;
+                }
+            }
         }
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -503,7 +501,8 @@ namespace SelfBalancingTree
                 throw new ArgumentNullException();
             }
 
-            foreach (var item in this)
+            var list = this.ToList();
+            foreach (var item in list)
             {
                 if (other.Contains(item))
                 {
@@ -1054,12 +1053,6 @@ namespace SelfBalancingTree
         }
         private void Print(Node<T> currentNode)
         {
-            if (currentNode.LeftNode == null && currentNode.RightNode == null)
-            {
-                Console.Write("{0}, ", currentNode.Value);
-                return;
-            }
-
             if (currentNode.LeftNode != null)
             {
                 Print(currentNode.LeftNode);
